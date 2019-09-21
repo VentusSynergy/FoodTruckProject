@@ -6,6 +6,7 @@ public class TestMain {
 	private final static int MAX_NUM = 5;
 	private static FoodTruck[] wheels = new FoodTruck[MAX_NUM];
 	private static FoodTruck[] ratingCount = new FoodTruck[MAX_NUM];
+	private static int i;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -14,6 +15,7 @@ public class TestMain {
 		String food = "";
 		int rating = 0;
 		int ave = 0;
+		int hih = 0;
 
 		while (c < 5) {
 
@@ -41,36 +43,73 @@ public class TestMain {
 
 			wheels[c] = truck;
 			ratingCount[c] = rate;
-			
+
+			if (hih < rating) {
+				hih = rating;
+			}
+
+			// average calculation start
 			int tar = rating;
+
 			int next = ave + tar;
 			tar = ave;
 			ave = next;
-			
-			
-			
-			
+
 			c++;
 		}
+		double average;
 
-		for (int i = 0; i < wheels.length; i++) {
-			if (wheels[i] != null) {
-				System.out.println(wheels[i]);
-
-			}
-		}
-		//could make shorter
-		double average = (((double) ave) / c) + 0.005;
+		// could make shorter
+		average = (((double) ave) / c) + 0.005;
 		average = average * 100;
 		average = (int) average;
 		average = (double) average;
 		average = average / 100;
-		System.out.println("Average rating: " + average);
+		System.out.println(average);
 
-		for (int i = 0; i < ratingCount.length; i++) {
-			if (ratingCount[i] != null) {
+		menu(average, hih, wheels, sc, i);
+	}
+
+	private static void menu(double average, int hih, FoodTruck[] wheels, Scanner sc, int i) {
+		System.out.println("** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
+		System.out.println("\n3. Display the highest-rated food truck\n\n4. Quit");
+		int input = sc.nextInt();
+
+		while (input != 4) {
+			switch (input) {
+			case 1:
+				for (i = 0; i < wheels.length; i++) {
+					if (wheels[i] != null) {
+						System.out.println("\n" + wheels[i] + "\n");
+					}
+				}
+				System.out.println("\n1** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
+				System.out.println("\n3. Display the highest-rated food truck\n\n4. Quit");
+				input = sc.nextInt();
+				break;
+			case 2:
+				System.out.println("\nAverage rating: " + average + "\n");
+				System.out.println("** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
+				System.out.println("\n3. Display the highest-rated food truck\n\n4. Quit");
+				input = sc.nextInt();
+				break;
+			case 3:
+				System.out.println("\nHighest rating: " + hih + "\n");
+				System.out.println("** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
+				System.out.println("\n3. Display the highest-rated food truck\n\n4. Quit");
+				input = sc.nextInt();
+				break;
+			case 4:
+				System.out.println("Ending");
+				sc.close();
+			default:
+				System.out.println("** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
+				System.out.println("\n3. Display the highest-rated food truck\n\n4. Quit");
+				input = sc.nextInt();
+				break;
 
 			}
 		}
+
 	}
 }
