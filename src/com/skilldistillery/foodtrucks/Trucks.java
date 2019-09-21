@@ -11,39 +11,44 @@ public class Trucks {
 		int c = 0;
 		String name = "";
 		String food = "";
-		String rating = "";
+		int rating = 0;
 
 		while (c < 5) {
-			c++;
 
 			System.out.println("Enter truck name: ");
 			name = sc.next();
-			if (name.equalsIgnoreCase("off"))
+			if (name.equalsIgnoreCase("quit"))
 				break;
 
 			System.out.println("Enter food type: ");
 			food = sc.next();
-			if (food.equalsIgnoreCase("off"))
-				break;
+			if (food == null) {
+				food = "";
+			}
 
 			System.out.println("Set rating: ");
-			rating = sc.next();
-			if (rating.equalsIgnoreCase("off"))
-				break;
+			rating = sc.nextInt();
 
 			FoodTruck truck = new FoodTruck(name, food, rating);
 
-			for (int i = 0; i < wheels.length; i++) {
-				wheels[i] = truck;
-			}
-			System.out.println(wheels[0]);
-			System.out.println(wheels[1]);
-			System.out.println(wheels[2]);
-			System.out.println(wheels[3]);
-			System.out.println(wheels[4]);
-
+			wheels[c] = truck;
+			c++;
 		}
 
+		for (int i = 0; i < wheels.length; i++) {
+			if (wheels[i] != null) {
+				System.out.println(wheels[i]);
+		
+
+			}
+//			for (i = 0; i < wheels.length; i++) {
+//				if (wheels[i] != null) {
+//					System.out.println(wheels[i]);
+					
+					
+//				}
+
+		}
 	}
 
 }

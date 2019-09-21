@@ -4,8 +4,8 @@ public class FoodTruck {
 	private int numericId;
 	private String name;
 	private String foodType;
-	private String rating;
-	private int nextId = 1;
+	private int rating;
+	private static int nextId = 1;
 
 
 	public FoodTruck() {
@@ -15,13 +15,16 @@ public class FoodTruck {
 		
 	}
 
-	public FoodTruck(String name, String foodType, String rating) {
+	public FoodTruck(String name, String foodType, int rating) {
 		super();
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
 		this.numericId = nextId;
 		nextId++;
+	}
+	public FoodTruck(int rating) {
+		this.rating = rating;
 	}
 	public int getNumericId() {
 		return numericId;
@@ -37,8 +40,7 @@ public class FoodTruck {
 
 	@Override
 	public String toString() {
-		return "FoodTruck [numericId=" + numericId + ", name=" + name + ", foodType=" + foodType + ", rating=" + rating
-				+ "]";
+		return "Food truck id #: " + numericId + ", Name: " + name + ", Food type: " + foodType + ", Rating: " + rating;
 	}
 
 	public void setName(String name) {
@@ -53,11 +55,11 @@ public class FoodTruck {
 		this.foodType = foodType;
 	}
 
-	public String getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
