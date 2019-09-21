@@ -3,39 +3,47 @@ package com.skilldistillery.foodtrucks;
 import java.util.Scanner;
 
 public class Trucks {
-	static FoodTruck food = new FoodTruck();
-	static FoodTruck rating = new FoodTruck();
-	static FoodTruck name = new FoodTruck();
-	static FoodTruck[] fTruck;
-	private int numOfTruck = 0;
-	
 	private final static int MAX_NUM = 5;
+	private static FoodTruck[] wheels = new FoodTruck[MAX_NUM];
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Enter truck name: ");
-		String name1 = sc.next();
-		name.setName(name1);
-		
-		System.out.println("Enter food type");
-		String food1 = sc.next();
-		food.setFoodType(food1);
-		
-		System.out.println("Set rating: ");
-		int rating = sc.nextInt();
-		rating.set
-		
-		
+		int c = 0;
+		String name = "";
+		String food = "";
+		String rating = "";
 
-	}
-	public Trucks() {
-		fTruck = new FoodTruck[MAX_NUM];
-	}
-	public void addTruck(FoodTruck f) {
-		fTruck[numOfTruck] = f;
-		numOfTruck++;
-		
+		while (c < 5) {
+			c++;
+
+			System.out.println("Enter truck name: ");
+			name = sc.next();
+			if (name.equalsIgnoreCase("off"))
+				break;
+
+			System.out.println("Enter food type: ");
+			food = sc.next();
+			if (food.equalsIgnoreCase("off"))
+				break;
+
+			System.out.println("Set rating: ");
+			rating = sc.next();
+			if (rating.equalsIgnoreCase("off"))
+				break;
+
+			FoodTruck truck = new FoodTruck(name, food, rating);
+
+			for (int i = 0; i < wheels.length; i++) {
+				wheels[i] = truck;
+			}
+			System.out.println(wheels[0]);
+			System.out.println(wheels[1]);
+			System.out.println(wheels[2]);
+			System.out.println(wheels[3]);
+			System.out.println(wheels[4]);
+
+		}
+
 	}
 
 }
