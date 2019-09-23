@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TestMain {
 	private final static int MAX_NUM = 5;
 	private static FoodTruck[] wheels = new FoodTruck[MAX_NUM];
-	private static FoodTruck[] ratingCount = new FoodTruck[MAX_NUM];
+	private static FoodTruck[] highRate = new FoodTruck[MAX_NUM];
 	private static int i;
 
 	public static void main(String[] args) {
@@ -39,14 +39,20 @@ public class TestMain {
 			} while (rating > 10 || rating < 1);
 
 			FoodTruck truck = new FoodTruck(name, food, rating);
-			FoodTruck rate = new FoodTruck(rating);
 
 			wheels[c] = truck;
-			ratingCount[c] = rate;
-
-			if (hih < rating) {
-				hih = rating;
+			highRate[c] = truck;
+			
+			if(highRate[0].getRating() < highRate[c].getRating()) {
+				highRate[0] = highRate[c];
 			}
+			c++;
+			
+			
+			
+			
+				
+			
 
 			// average calculation start
 			int tar = rating;
@@ -55,8 +61,8 @@ public class TestMain {
 			tar = ave;
 			ave = next;
 
-			c++;
 		}
+		
 		double average;
 
 		// could make shorter
@@ -65,7 +71,6 @@ public class TestMain {
 		average = (int) average;
 		average = (double) average;
 		average = average / 100;
-		System.out.println(average);
 
 		menu(average, hih, wheels, sc, i);
 	}
@@ -94,8 +99,10 @@ public class TestMain {
 				input = sc.nextInt();
 				break;
 			case 3:
-				System.out.println("\nHighest rating: " + hih + "\n");
-				System.out.println("** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
+				System.out.println("\nHighest rating: ");
+				if (highRate[0] != null)
+					System.out.println(highRate[0]);
+				System.out.println("\n** MENU **\n\n1. List all existing food trucks\n\n2. See the average rating of food trucks");
 				System.out.println("\n3. Display the highest-rated food truck\n\n4. Quit");
 				input = sc.nextInt();
 				break;
@@ -110,6 +117,7 @@ public class TestMain {
 
 			}
 		}
+		
 
 	}
 }

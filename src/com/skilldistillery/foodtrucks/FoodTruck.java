@@ -26,33 +26,10 @@ public class FoodTruck {
 	public FoodTruck(int rating) {
 		this.rating = rating;
 	}
-	public int getNumericId() {
-		return numericId;
-	}
-
-	public void setNumericId(int numericId) {
-		this.numericId = numericId;
-	}
-
-	public String getName() {
-		return name;
-	}
 
 	@Override
 	public String toString() {
 		return "Food truck id #: " + numericId + ", Name: " + name + ", Food type: " + foodType + ", Rating: " + rating;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getFoodType() {
-		return foodType;
-	}
-
-	public void setFoodType(String foodType) {
-		this.foodType = foodType;
 	}
 
 	public int getRating() {
