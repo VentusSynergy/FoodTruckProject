@@ -14,7 +14,7 @@
 
 #### 1. Writing out a plan pays off. For this program, I decided to jump into it without planning out the steps of what I needed to do. I caught myself jumping from one part of the application to the next and I suffered for it when there where both logic and syntax errors; not to mention disorganization of code.
 
-#### 2.When using loops to input new data into different indexes in an array, inserting a loop counter variable into the brackets works wonders. I had spent too much time trying different methods to get around that problem and was so frustrated and happy to finally get it to work. I find it to be very comical and fascinating when simple things such as that stump me.
+#### 2. When using loops to input new data into different indexes in an array, inserting a loop counter variable into the brackets works wonders. I had spent too much time trying different methods to get around that problem and was so frustrated and happy to finally get it to work. I find it to be very comical and fascinating when simple things such as that stump me.
 
 
 ### New Technologies/Topics Applied
