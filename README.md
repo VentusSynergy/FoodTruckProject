@@ -6,7 +6,7 @@
 
 #### The objective of this project was to prompt the user to create five "food truck" objects and give them attributes that consisted of a number id, food truck name, food type, and rating. On top of that, the program needed to use that input to give the user options to display all of the trucks and their attributes, highest rating truck, average ratings of all trucks, and/or an option to quit the program.
 
-### Steps of Application
+### Steps Of The Application
 
 #### The user is prompted to enter a truck name, food type, and then a rating for that truck. At the same time, a truck id is automatically assigned. The program will continue to ask the user for input up to five times but will stop asking the user for more input if the user enters "quit" when the application asks for another truck. The next step in the program is to print out a menu of 4 options. First option: "List all existing food trucks" (lists all trucks and attributes). Second option: "See the average rating of food trucks". Third option: "Display the highest-rated food truck". Fourth option: "Quit". This menu will continue to be printed until the user chooses the fourth option.
 
